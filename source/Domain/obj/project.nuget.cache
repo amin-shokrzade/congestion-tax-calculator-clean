@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "54za2KticASAC4VSANUwqn0NHDuxr3xiogdnt8jSrfXGvSQuBQ1QEjs+HxJ7nG+C4i9h24SU8SRGU5ARq2OMiQ==",
+  "success": true,
+  "projectFilePath": "C:\\congestion-tax-calculator-clean\\source\\Domain\\Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Amin\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
+    "C:\\Users\\Amin\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\Amin\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

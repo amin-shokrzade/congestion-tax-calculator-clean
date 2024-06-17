@@ -20,7 +20,6 @@
 	<ItemGroup>
 		<Folder Include="Entities\Cities\Validators\" />
 		<Folder Include="Entities\Cities\Queries\" />
-		<Folder Include="Entities\Cities\Operations\" />
 		<Folder Include="Entities\TaxFreeDates\Validators\" />
 		<Folder Include="Entities\TaxFreeDates\Queries\" />
 		<Folder Include="Entities\TaxFreeDates\Operations\" />
@@ -30,7 +29,6 @@
 		<Folder Include="Entities\TimeAndTaxAmounts\Validators\" />
 		<Folder Include="Entities\TimeAndTaxAmounts\Queries\" />
 		<Folder Include="Entities\TimeAndTaxAmounts\Operations\" />
-		<Folder Include="Entities\Vehicles\Operations\" />
 		<Folder Include="Entities\VehicleTypes\Validators\" />
 		<Folder Include="Entities\VehicleTypes\Queries\" />
 		<Folder Include="Entities\VehicleTypes\Operations\" />

@@ -1,14 +1,38 @@
-Source/Domain/bin
-Source/Domain/obj
+source/Domain/obj/Debug
+source/Domain/obj/Release
+source/Domain/bin/Debug
+source/Domain/bin/Release
 
-Source/Application/bin
-Source/Application/obj
+source/Application/obj/Debug
+source/Application/obj/Release
+source/Application/bin/Debug
+source/Application/bin/Release
 
-Source/Infrastructure/bin
-Source/Infrastructure/obj
+source/Infrastructure/obj/Debug
+source/Infrastructure/obj/Release
+source/Infrastructure/bin/Debug
+source/Infrastructure/bin/Release
 
-Source/Website/bin
-Source/Website/obj
-Source/Website/wwwroot/lib
+source/Website/obj/Debug
+source/Website/obj/publish
+source/Website/obj/Release
+source/Website/bin/Debug
+source/Website/bin/Release
+
+
+test/Application.FunctionalTests/bin
+test/Application.FunctionalTests/obj
+
+test/Application.UnitTests/bin
+test/Application.UnitTests/obj
+
+test/Domain.UnitTests/bin
+test/Domain.UnitTests/obj
+
+test/Infrastructure.IntegrationTests/bin
+test/Infrastructure.IntegrationTests/obj
+
+test/Web.AcceptanceTests/bin
+test/Web.AcceptanceTests/obj
 
 .vs
