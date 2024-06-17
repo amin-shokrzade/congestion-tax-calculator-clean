@@ -8,12 +8,10 @@ namespace Infrastructure.Tools
     public class CongestionTaxCalculator : ICongestionTaxCalculator
     {
         private readonly IDatabaseContext _context;
-        private readonly IConfiguration _configurationManager;
 
         public CongestionTaxCalculator(IDatabaseContext context, IConfiguration configurationManager)
         {
             _context = context;
-            _configurationManager = configurationManager;
         }
         public async Task<int> CalcTax(City city, VehicleType vehicleType, IReadOnlyCollection<DateTime> dates)
         {
@@ -23,7 +21,10 @@ namespace Infrastructure.Tools
             if (await IsTaxExemptVehicle(city.Id, vehicleType.Id)) return sum;
 
             // Get City tax charges
-            var cityTaxCharges= await _context.TimeAndTaxAmounts.Where(x => x.Deleted == false && x.CityId == city.Id).ToListAsync();
+            var cityTaxCharges= await _context
+                .TimeAndTaxAmounts
+                .AsNoTracking()
+                .Where(x => x.Deleted == false && x.CityId == city.Id).ToListAsync();
 
             // Group dates based on date only
             var dateGroups = dates.GroupBy(date => date.Date);
@@ -57,6 +58,7 @@ namespace Infrastructure.Tools
         {
             return await _context
                 .TaxFreeVehicles
+                .AsNoTracking()
                 .AnyAsync(taxfreevehicle => taxfreevehicle.Deleted == false && taxfreevehicle.CityId == cityId && taxfreevehicle.VehicleTypeId == vehicleTypeId);
         }
 
@@ -74,6 +76,7 @@ namespace Infrastructure.Tools
         {
             return await _context
                 .TaxFreeDates
+                .AsNoTracking()
                 .AnyAsync(freedate => freedate.Deleted == false && freedate.CityId == cityId && freedate.FreeDate == DateOnly.FromDateTime(date.Date) || freedate.FreeDate.AddDays(-1) == DateOnly.FromDateTime(date.Date));
         }
 

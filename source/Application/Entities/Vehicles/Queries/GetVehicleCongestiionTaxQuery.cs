@@ -38,9 +38,9 @@ namespace Application.Entities.Vehicles.Queries
         {
             request.userId = _iUser.Id;
 
-            var taxCity =await _context.Cities.FirstAsync(city => city.Id == request.CityId);
+            var taxCity =await _context.Cities.AsNoTracking().FirstAsync(city => city.Id == request.CityId);
 
-            var taxVehicleType = await _context.VehicleTypes.FirstAsync(vehicleType => vehicleType.Id == request.Vehicle.VehicleTypeId);
+            var taxVehicleType = await _context.VehicleTypes.AsNoTracking().FirstAsync(vehicleType => vehicleType.Id == request.Vehicle.VehicleTypeId);
 
             return await _congestionTaxCalculator.CalcTax(taxCity, taxVehicleType, request.Dates);
         }

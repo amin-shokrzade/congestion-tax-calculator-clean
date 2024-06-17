@@ -42,12 +42,18 @@ namespace Application.Entities.Vehicles.Validators
 
         async Task<bool> IsValidCityId(Guid cityId, IDatabaseContext idatabaseContext, CancellationToken cancellationToken)
         {
-            return await idatabaseContext.Cities.AnyAsync(city => city.Deleted == false && city.Id == cityId);
+            return await idatabaseContext
+                .Cities
+                .AsNoTracking()
+                .AnyAsync(city => city.Deleted == false && city.Id == cityId);
         }
 
         async Task<bool> IsValidVehicleTypeId(Guid vehicleId, IDatabaseContext idatabaseContext, CancellationToken cancellationToken)
         {
-            return await idatabaseContext.VehicleTypes.AnyAsync(vehicleType => vehicleType.Deleted == false && vehicleType.Id == vehicleId);
+            return await idatabaseContext
+                .VehicleTypes
+                .AsNoTracking()
+                .AnyAsync(vehicleType => vehicleType.Deleted == false && vehicleType.Id == vehicleId);
         }
     }
 }
